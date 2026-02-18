@@ -4,7 +4,7 @@ import pygame
 import time
 import os
 
-# Используем WAV для максимальной стабильности
+
 SOUND_FILE = "sound.wav" 
 THRESHOLD = 0.60         
 COOLDOWN = 3             
@@ -13,7 +13,7 @@ SHAME_DIR = "shame_photos"
 if not os.path.exists(SHAME_DIR):
     os.makedirs(SHAME_DIR)
 
-# Инициализация звука под архитектуру Apple Silicon
+
 pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.mixer.init()
 
@@ -82,7 +82,7 @@ while cap.isOpened():
             cv2.putText(image, f"Shame: {shame_count}", (10, 110), 
                         cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
-    # Рисуем линию порога
+    
     limit_y = int(THRESHOLD * h)
     cv2.line(image, (0, limit_y), (w, limit_y), (0, 255, 255), 2)
     
